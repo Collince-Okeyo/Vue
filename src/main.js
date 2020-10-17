@@ -1,4 +1,11 @@
 import { createApp } from 'vue'
 
 import App from  './App.vue'
-createApp(App).mount('#app')
+import FriendContact from './components/FriendsContact.vue'
+const app =  createApp(App)
+
+app.component('friend-content',FriendContact)
+
+
+
+app.mount('#app')
