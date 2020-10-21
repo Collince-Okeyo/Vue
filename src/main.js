@@ -5,7 +5,4 @@ import FriendContact from './components/FriendsContact.vue'
 const app =  createApp(App)
 
 app.component('friend-content',FriendContact)
-
-
-
 app.mount('#app')

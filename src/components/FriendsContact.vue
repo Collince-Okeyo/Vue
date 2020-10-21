@@ -1,33 +1,50 @@
 <template>
-<section>
+  <section>
     <li>
-        <h2>{{ friend.name }}</h2>
-        <button @click="showdetails">Show Details</button>
-        <ul v-if="detailsAreAvailable">
-            <li><strong>Phone</strong>{{ friend.phone }}</li>
-            <li><strong>Email</strong>{{ friend.email }}</li>
-        </ul>
+      <h2>{{ name }} {{ isFav === true ? 'Fav' : 'Not fav' }}</h2>
+      <button @click="showdetails">Show Details</button>
+      <ul v-if="detailsAreAvailable">
+        <li><strong>Phone</strong>{{ phone }}</li>
+        <li><strong>Email</strong>{{ email }}</li>
+      </ul>
     </li>
-</section>
+  </section>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            detailsAreAvailable: false,
-            friend: {
-                id: "dffgkghs",
-                name: "Muli2",
-                phone: "45454545",
-                email: "email",
-            },
-        };
+  // props:[
+  //     'email',
+  //     'phone',
+  //     'name',
+  //     'isFav'
+  // ],
+  props: {
+    ///adding
+    name: {
+      type: String,
+      required: true
     },
-    methods: {
-        showdetails() {
-            this.detailsAreAvailable = !this.detailsAreAvailable;
-        },
+    phone: String,
+    email: String,
+    isFav: {
+      type: Boolean,
+      required: false,
+      default: false,
+
+    }
+
+  },
+  data() {
+    return {
+      detailsAreAvailable: false,
+
+    };
+  },
+  methods: {
+    showdetails() {
+      this.detailsAreAvailable = !this.detailsAreAvailable;
     },
+  },
 };
 </script>
