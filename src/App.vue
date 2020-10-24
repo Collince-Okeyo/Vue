@@ -5,7 +5,7 @@
       <friend-content
           v-for="friend in friends" :key="friend.id"
           :email="friend.email" :is-fav="true" :name="friend.name" :phone="friend.phone"
-          @toggle-fav="emitsFromProp"
+          @favorite="toogle"
       ></friend-content>
     </ul>
   </section>
@@ -30,8 +30,9 @@ export default {
 
   },
   methods:{
-    emitsFromProp(){
-      alert('Hello')
+    toogle(id){
+      console.log('ERic')
+      alert(`Hello ${id}`)
     }
   }
 };

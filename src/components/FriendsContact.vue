@@ -1,8 +1,8 @@
 <template>
   <section>
     <li>
-      <h2>{{ name }} {{ isFav === true ? 'Fav' : 'Not fav' }}</h2>
-      <button @click="showdetails">Show Details</button>
+      <h2>{{ name }} {{ fav === true ? 'Fav' : 'Not fav' }}</h2>
+      <button @click="showdetails">Show Details</button> <button @click="toogleFav">Fav</button>
       <ul v-if="detailsAreAvailable">
         <li><strong>Phone</strong>{{ phone }}</li>
         <li><strong>Email</strong>{{ email }}</li>
@@ -46,7 +46,9 @@ export default {
       this.detailsAreAvailable = !this.detailsAreAvailable;
     },
     toogleFav(){
-      this.$emit('toogle-fav')
+      this.$emit('favorite',this.phone)
+      console.log('Muli')
+      //this.fav = !this.fav;
     }
   },
 };
