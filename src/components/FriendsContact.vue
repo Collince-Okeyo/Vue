@@ -38,13 +38,16 @@ export default {
   data() {
     return {
       detailsAreAvailable: false,
-
+   fav:this.isFav,
     };
   },
   methods: {
     showdetails() {
       this.detailsAreAvailable = !this.detailsAreAvailable;
     },
+    toogleFav(){
+      this.$emit('toogle-fav')
+    }
   },
 };
 </script>
